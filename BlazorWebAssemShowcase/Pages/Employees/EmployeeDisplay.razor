@@ -1,4 +1,5 @@
 ﻿@page "/EmployeeDisplay"
+@using BlazorWebAssemShowcase.Pages.PartialViews
 
 <PageTitle>Employee Display</PageTitle>
 
@@ -36,12 +37,12 @@ else
                             <td id="row13">@person.PhoneNumber</td>
                             <td id="row14">@person.MaritalStatus</td>
                             <td id="row15">@person.Gender</td>
-                            <!-- <td id="row16"><button type="button" class="btn btn-info" @onclick="() => ShowEmployeeSecretsModal(person.EmployeeId)">Show Employee SecretKeys</button></td> -->
+                            <td id="row16"><button type="button" class="btn btn-info" @onclick="() => ShowEmployeeSecretsModal(person.FirstName!, person.LastName!)">Show Employee SecretKeys</button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- <EmployeeSecretsPopUpModal @ref="employeeSecretsModal" /> -->
     }
+    <EmployeeSecretsPopUpModal @ref="employeeSecretsModal" />
 }

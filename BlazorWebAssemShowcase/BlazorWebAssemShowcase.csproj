@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\PartialViews\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BlazorWeb.Shared\BlazorWeb.Shared\BlazorWeb.Shared.csproj" />
   </ItemGroup>
 
