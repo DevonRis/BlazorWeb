@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Domain\Agents\" />
     <Folder Include="Domain\Constants\" />
-    <Folder Include="Domain\Requests\" />
   </ItemGroup>
 
 </Project>
