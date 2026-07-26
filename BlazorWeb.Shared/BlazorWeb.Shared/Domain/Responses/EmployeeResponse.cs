@@ -11,5 +11,9 @@ namespace BlazorWeb.Shared.Domain.Responses
         public string? PhoneNumber { get; set; }
         public MaritalStatus MaritalStatus { get; set; }
         public Gender Gender { get; set; }
+        public Department Department { get; set; }
+        public string? JobTitle { get; set; }
+        public string? ShortBio { get; set; }
+        public string? ImageUrl { get; set; }
     }
 }

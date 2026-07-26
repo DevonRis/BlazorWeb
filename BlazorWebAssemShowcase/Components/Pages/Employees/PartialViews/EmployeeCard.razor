@@ -1,0 +1,49 @@
+﻿@using BlazorWeb.Shared.Domain.MethodExtentions
+
+<div class="employee-card">
+    <div class="card-header">
+        @if (!string.IsNullOrEmpty(Employee.ImageUrl))
+        {
+            <img class="employee-avatar-img"
+                 src="@Employee.ImageUrl"
+                 alt="@Employee.FirstName @Employee.LastName" />
+        }
+        else
+        {
+            <div class="employee-avatar">@GetInitials()</div>
+        }
+
+        <div class="employee-heading">
+            <span class="employee-name">@Employee.FirstName @Employee.LastName</span>
+            <span class="employee-title">@Employee.JobTitle</span>
+            <span class="employee-department">@Employee.Department.GetEnumDescription()</span>
+        </div>
+
+        <button class="info-icon" @onclick="OnInfoClicked" title="More info" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+        </button>
+    </div>
+
+    <div class="card-body">
+        <div class="info-row">
+            <span class="info-glyph">&#9993;</span>
+            <span class="info-text">@Employee.Email</span>
+        </div>
+        <div class="info-row">
+            <span class="info-glyph">&#128241;</span>
+            <span class="info-text">@Employee.PhoneNumber</span>
+        </div>
+        <div class="info-row">
+            <span class="info-glyph">&#128100;</span>
+            <span class="info-text">@Employee.MaritalStatus.GetEnumDescription()</span>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-info show-btn" @onclick="OnSecretKeyClicked">Show</button>
+        </div>
+    </div>
+</div>
