@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="API/BlazorWeb.Api/BlazorWeb.Api.csproj" />
+  <Project Path="BlazorWeb.Shared/BlazorWeb.Shared/BlazorWeb.Shared.csproj" />
+  <Project Path="BlazorWebAssemShowcase/BlazorWebAssemShowcase.csproj" />
+</Solution>
