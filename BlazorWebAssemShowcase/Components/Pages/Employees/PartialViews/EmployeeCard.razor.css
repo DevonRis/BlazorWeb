@@ -1,0 +1,132 @@
+﻿.employee-card {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+    .employee-card:hover {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+    }
+
+.card-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 12px;
+}
+.card-footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #f2f2f2;
+    padding-top: 14px;
+    margin-top: auto;
+}
+
+.show-btn {
+    padding: 6px 22px;
+    font-size: 0.82rem;
+}
+.employee-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #4caf82;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.employee-avatar-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.employee-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.employee-name {
+    color: #4caf82;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.employee-title {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.employee-department {
+    color: #999;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.info-icon {
+    background: none;
+    border: none;
+    color: #c4c4c4;
+    cursor: pointer;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+    .info-icon:hover {
+        color: #4caf82;
+    }
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #f2f2f2;
+    padding-top: 14px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: #666;
+}
+
+.info-glyph {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.info-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

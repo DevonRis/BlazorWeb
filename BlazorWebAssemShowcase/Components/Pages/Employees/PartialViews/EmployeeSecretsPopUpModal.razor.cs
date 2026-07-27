@@ -1,7 +1,7 @@
 ﻿using BlazorWeb.Shared.Domain.Responses;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebAssemShowcase.Pages.PartialViews
+namespace BlazorWebAssemShowcase.Components.Pages.Employees.PartialViews
 {
     public partial class EmployeeSecretsPopUpModal : ComponentBase
     {

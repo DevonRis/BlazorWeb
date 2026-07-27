@@ -1,0 +1,38 @@
+﻿@page "/EmployeeDisplay"
+@using BlazorWeb.Shared.Domain.MethodExtentions
+@using BlazorWebAssemShowcase.Components.Pages.Employees.PartialViews
+
+<PageTitle>Employee Display</PageTitle>
+
+<div class="employee-page">
+    <h1 class="page-heading">Our Researchers</h1>
+
+    @if (Employees == null)
+    {
+        <p class="loading"><em>Loading...</em></p>
+    }
+    else
+    {
+        <div class="filter-bar">
+            <label class="filter-label">PICK DEPARTMENT</label>
+            <select class="filter-dropdown" @bind="SelectedDepartment">
+                <option value="">All Departments</option>
+                @foreach (var dept in Employees.Select(e => e.Department).Distinct())
+                {
+                    <option value="@dept">@dept.GetEnumDescription()</option>
+                }
+            </select>
+        </div>
+
+        <div class="card-grid">
+            @foreach (var person in FilteredEmployees)
+            {
+                <EmployeeCard Employee="person"
+                              OnInfoClicked="() => ShowEmployeeSecretsModal(person.FirstName!, person.LastName!)"
+                              OnSecretKeyClicked="() => ShowEmployeeSecretsModal(person.FirstName!, person.LastName!)" />
+            }
+        </div>
+
+        <EmployeeSecretsPopUpModal @ref="employeeSecretsModal" />
+    }
+</div>

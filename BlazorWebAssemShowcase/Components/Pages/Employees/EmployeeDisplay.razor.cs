@@ -1,10 +1,10 @@
 ﻿using BlazorWeb.Shared.Domain.Requests;
 using BlazorWeb.Shared.Domain.Responses;
-using BlazorWebAssemShowcase.Pages.PartialViews;
 using BlazorWebAssemShowcase.Services;
 using Microsoft.AspNetCore.Components;
+using BlazorWebAssemShowcase.Components.Pages.Employees.PartialViews;
 
-namespace BlazorWebAssemShowcase.Pages.Employees
+namespace BlazorWebAssemShowcase.Components.Pages.Employees
 {
     public partial class EmployeeDisplay : ComponentBase
     {
@@ -13,6 +13,16 @@ namespace BlazorWebAssemShowcase.Pages.Employees
         private List<EmployeeResponse>? Employees { get; set; }
         private SecretResponse? SelectedSecret { get; set; }
         private EmployeeSecretsPopUpModal? employeeSecretsModal;
+
+        private string SelectedDepartment { get; set; } = "";
+
+        // filter runs off the bound dropdown; empty = show everyone
+        private IEnumerable<EmployeeResponse> FilteredEmployees =>
+            Employees == null
+                ? Enumerable.Empty<EmployeeResponse>()
+                : string.IsNullOrEmpty(SelectedDepartment)
+                    ? Employees
+                    : Employees.Where(e => e.Department.ToString() == SelectedDepartment);
         protected async override Task OnInitializedAsync()
         {
             await GetApiEmployeesForView();

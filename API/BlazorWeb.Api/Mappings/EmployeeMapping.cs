@@ -13,7 +13,10 @@ namespace BlazorWeb.Api.Mappings
             Email = employee.Email,
             PhoneNumber = employee.PhoneNumber,
             MaritalStatus = employee.MaritalStatus,
-            Gender = employee.Gender
+            Gender = employee.Gender,
+            Department = employee.Department,
+            JobTitle = employee.JobTitle,
+            ShortBio = employee.ShortBio
         };
         private static Employee ToEntity(EmployeeResponse d) => new()
         {
@@ -23,7 +26,10 @@ namespace BlazorWeb.Api.Mappings
             Email = d.Email,
             PhoneNumber = d.PhoneNumber,
             MaritalStatus = d.MaritalStatus,
-            Gender = d.Gender
+            Gender = d.Gender,
+            Department = d.Department,
+            JobTitle = d.JobTitle,
+            ShortBio = d.ShortBio
         };
     }
 }
