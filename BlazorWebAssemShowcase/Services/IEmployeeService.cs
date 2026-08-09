@@ -7,5 +7,6 @@ namespace BlazorWebAssemShowcase.Services
     {
         Task<List<EmployeeResponse>?> GetEmployeesAsync();
         Task<SecretResponse?> GetEmployeeSecretAsync(GetEmployeeSecretRequest request);
+        Task<EmployeeBioResponse?> GetEmployeeBioAsync(GetEmployeeBioRequest request);
     }
 }

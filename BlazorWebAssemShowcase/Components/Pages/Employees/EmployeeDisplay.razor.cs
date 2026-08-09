@@ -12,7 +12,9 @@ namespace BlazorWebAssemShowcase.Components.Pages.Employees
         private IEmployeeService EmployeeService { get; set; } = default!;
         private List<EmployeeResponse>? Employees { get; set; }
         private SecretResponse? SelectedSecret { get; set; }
+        private EmployeeBioResponse? SelectedBio { get; set; }
         private EmployeeSecretsPopUpModal? employeeSecretsModal;
+        private EmployeeInfo? employeeInfoModal;
 
         private string SelectedDepartment { get; set; } = "";
 
@@ -41,6 +43,17 @@ namespace BlazorWebAssemShowcase.Components.Pages.Employees
 
             SelectedSecret = await EmployeeService.GetEmployeeSecretAsync(request);
             employeeSecretsModal?.Show(SelectedSecret);
+        }
+        private async Task ShowEmployeeInfoModal(int employeeId)
+        {
+            GetEmployeeBioRequest request = new();
+            if (employeeId > 0)
+            {
+                request = new GetEmployeeBioRequest { EmployeeId = employeeId };
+            }
+
+            SelectedBio = await EmployeeService.GetEmployeeBioAsync(request);
+            employeeInfoModal?.Show(SelectedBio);
         }
     }
 }
