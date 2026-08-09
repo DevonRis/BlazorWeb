@@ -13,7 +13,8 @@ namespace BlazorWebAssemShowcase.Services
             return await _httpClient.GetFromJsonAsync<List<EmployeeResponse>?>("api/Employees");
         }
         public async Task<SecretResponse?> GetEmployeeSecretAsync(GetEmployeeSecretRequest request)
-            => await _httpClient.GetFromJsonAsync<SecretResponse?>(
-                   $"api/Employees/secret?firstName={request.FirstName}&lastName={request.LastName}");
+            => await _httpClient.GetFromJsonAsync<SecretResponse?>($"api/Employees/secret?firstName={request.FirstName}&lastName={request.LastName}");
+        public async Task<EmployeeBioResponse?> GetEmployeeBioAsync(GetEmployeeBioRequest request)
+            => await _httpClient.GetFromJsonAsync<EmployeeBioResponse?>($"api/Employees/bio?employeeId={request.EmployeeId}");
     }
 }

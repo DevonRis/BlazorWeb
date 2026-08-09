@@ -18,18 +18,5 @@ namespace BlazorWeb.Api.Mappings
             JobTitle = employee.JobTitle,
             ShortBio = employee.ShortBio
         };
-        private static Employee ToEntity(EmployeeResponse d) => new()
-        {
-            EmployeeId = d.EmployeeId,
-            FirstName = d.FirstName,
-            LastName = d.LastName,
-            Email = d.Email,
-            PhoneNumber = d.PhoneNumber,
-            MaritalStatus = d.MaritalStatus,
-            Gender = d.Gender,
-            Department = d.Department,
-            JobTitle = d.JobTitle,
-            ShortBio = d.ShortBio
-        };
     }
 }

@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<ISecretService, SecretService>();
+builder.Services.AddScoped<IEmployeeShortBioService, EmployeeShortBioService>();
 
 // Lets the Blazor app (on a different port) actually call this API. Without it the browser blocks it.
 builder.Services.AddCors(options =>

@@ -28,11 +28,12 @@
             @foreach (var person in FilteredEmployees)
             {
                 <EmployeeCard Employee="person"
-                              OnInfoClicked="() => ShowEmployeeSecretsModal(person.FirstName!, person.LastName!)"
+                              OnInfoClicked="() => ShowEmployeeInfoModal(person.EmployeeId)"
                               OnSecretKeyClicked="() => ShowEmployeeSecretsModal(person.FirstName!, person.LastName!)" />
             }
         </div>
 
         <EmployeeSecretsPopUpModal @ref="employeeSecretsModal" />
+        <EmployeeInfo @ref="employeeInfoModal" />
     }
 </div>

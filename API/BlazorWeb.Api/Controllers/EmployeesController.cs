@@ -11,10 +11,12 @@ namespace BlazorWeb.Api.Controllers
     {
         private readonly IEmployeeService _employeeService;
         private readonly ISecretService _secretService;
-        public EmployeesController(IEmployeeService employeeService, ISecretService secretService)
+        private readonly IEmployeeShortBioService _employeeShortBioService;
+        public EmployeesController(IEmployeeService employeeService, ISecretService secretService, IEmployeeShortBioService employeeShortBioService)
         {
             _employeeService = employeeService;
             _secretService = secretService;
+            _employeeShortBioService = employeeShortBioService;
         }
 
         [HttpGet]
@@ -26,6 +28,13 @@ namespace BlazorWeb.Api.Controllers
             SecretResponse? secret = await _secretService.GetSecretByEmployeeNameAsync(request);
             if (secret is null) return NotFound();
             return Ok(secret);
+        }
+        [HttpGet("bio")]
+        public async Task<ActionResult<EmployeeBioResponse>> GetEmployeeBio([FromQuery] GetEmployeeBioRequest request)
+        {
+            EmployeeBioResponse? bio = await _employeeShortBioService.GetEmployeeBioAsync(request);
+            if (bio is null) return NotFound();
+            return Ok(bio);
         }
     }
 }
